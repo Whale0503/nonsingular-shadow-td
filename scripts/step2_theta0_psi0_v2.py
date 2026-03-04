@@ -34,7 +34,7 @@ def unit_flux(r, dr, b, alpha, cos2psi, psi0, kappa_ff, kappa_K, r_in, theta0, d
     # Nonsingular black hole metric: B(r) = 1 - R_g(r)/r, where R_g(r) = 2M * (1 - exp(-r^3 / (2M * r0_vac^2)))
     B = B_func(r, M, r0_vac)
     sqrt_B = sqrt(B) if B > 0 else 0.0
-    v_r = -kappa_ff * B * sqrt(2.0 / r)
+    v_r = -kappa_ff * B * sqrt(2.0 * M / r)
     Omega = kappa_K / sqrt(r**3)
     dOmega_dr = -1.5 * kappa_K * r**(-2.5)
     Omega_in = kappa_K / sqrt(r_in**3)
