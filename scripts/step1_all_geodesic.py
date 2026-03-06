@@ -205,8 +205,9 @@ if __name__ == "__main__":
     # Calculate the outer horizon of the nonsingular black hole
     r_h = find_outer_horizon(M, r0_vac)
     if r_h is None:
-        print("Warning: No horizon found, using approximate value r_h = 2M")
-        r_h = 2 * M
+        r_h = 2.0 * M
+        print(f"Info: No horizon found (r0_vac={r0_vac} > r0_crit ~1.138).")
+        print(f"      Spacetime is horizonless. Using numerical inner boundary r_h = {r_h:.1f}M")
     else:
         print(f"Nonsingular black hole outer horizon r_h = {r_h:.6f} M")
 
